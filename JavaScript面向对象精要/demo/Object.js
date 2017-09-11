@@ -41,3 +41,25 @@ Object.defineProperty(person1, 'name', {
   enumerable: true,
   configurable: true
 })
+
+{
+  function Person(name) {
+    this.name = name
+  }
+
+  Person.prototype.sayName = function() {
+    console.log(this.name)
+  }
+
+  Person.prototype.a = {
+    b: 11
+  }
+
+  var person1 = new Person('chenyn')
+  person1.a = {
+    c: 22
+  }
+  var person2 = new Person('liubbb')
+  console.log(person1.a)
+  console.log(person2.a)
+}
